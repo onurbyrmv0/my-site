@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import { RouterView, RouterLink } from 'vue-router'
+import Logo from './components/Logo.vue'
 </script>
 
 <template>
   <header class="p-6 flex justify-between items-center max-w-7xl mx-auto w-full z-50 relative">
-    <RouterLink to="/" class="text-2xl font-bold text-white hover:text-dark-primary transition-colors tracking-tight">
-      Onur<span class="font-light text-gray-400">Bayramov</span>
+    <RouterLink to="/">
+      <Logo />
     </RouterLink>
     <nav class="hidden md:flex gap-8 items-center">
       <RouterLink to="/" class="text-gray-300 hover:text-white transition-colors" active-class="text-dark-primary">Home</RouterLink>

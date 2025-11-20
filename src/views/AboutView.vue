@@ -18,10 +18,12 @@
         <div class="bg-dark-surface p-6 rounded-xl border border-gray-800">
           <h3 class="text-2xl font-bold mb-4 text-dark-secondary">Skills</h3>
           <ul class="list-disc list-inside text-gray-400 space-y-2">
-            <li>Vue.js & React</li>
-            <li>TypeScript & JavaScript</li>
-            <li>Tailwind CSS & Modern UI</li>
-            <li>Node.js & Backend Technologies</li>
+            <li>Vue.js, React & Angular</li>
+            <li>TypeScript & JavaScript (ES6+)</li>
+            <li>Tailwind CSS, Sass & Modern UI</li>
+            <li>Node.js, Express & Backend Technologies</li>
+            <li>Figma, Adobe XD & UI/UX Design</li>
+            <li>Git, Docker & CI/CD Pipelines</li>
           </ul>
         </div>
       </div>

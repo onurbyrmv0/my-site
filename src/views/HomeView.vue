@@ -16,7 +16,7 @@ const services = [
 ]
 
 const techStack = [
-  'Vue.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Vite', 'Git', 'Figma', 'Firebase'
+  'Vue.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Vite', 'Git', 'Figma', 'Firebase', 'Docker', 'PostgreSQL'
 ]
 </script>
 
