@@ -23,7 +23,7 @@ const projects = [
     title: 'Basic PMO Platform',
     description: 'A project management office platform for tracking and organizing tasks.',
     tags: ['Vue', 'PMO', 'Tracking'],
-    link: 'https://pmo-onurbayramov.codes',
+    link: 'https://pmo.onurbayramov.codes',
     image: '/pmo.png',
     github: 'https://github.com/onurbyrmv0/Basic-PMO-Platform'
   }
