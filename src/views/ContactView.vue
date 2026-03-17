@@ -12,44 +12,37 @@ const isSubmitting = ref(false)
 const submitForm = async () => {
   isSubmitting.value = true
   
-  // Kendi e-posta adresiniz
-  const EMAIL_ADDRESS = "onur.bayramov2005@icloud.com" 
+  // Web3Forms Access Key
+  const ACCESS_KEY = "22068d21-6be1-43a9-b33d-c157310947cd" 
 
   try {
-    const response = await fetch(`https://formsubmit.co/ajax/${EMAIL_ADDRESS}`, {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: { 
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
       body: JSON.stringify({
+        access_key: ACCESS_KEY,
         name: form.value.name,
         email: form.value.email,
         message: form.value.message,
-        _subject: `Portfolio: ${form.value.name} size bir mesaj gönderdi!`,
-        _template: 'table',
-        _captcha: 'false',
-        _honey: '' // Spam koruması için gizli alan
+        from_name: "Portfolio Website",
+        subject: `New Message from ${form.value.name}`
       })
     });
 
     const result = await response.json();
 
-    if (response.ok && (result.success === "true" || result.success === true)) {
-      alert('Mesajınız başarıyla gönderildi! Teşekkürler.')
+    if (result.success) {
+      alert('Mesajınız başarıyla gönderildi!')
       form.value = { name: '', email: '', message: '' }
     } else {
-      // FormSubmit hata mesajını göster (örneğin: "Please verify your email")
-      const errorMsg = result.message || 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
-      alert(`Hata: ${errorMsg}`);
-      
-      if (errorMsg.toLowerCase().includes('verify')) {
-        alert('Lütfen e-postanızı (Spam kutusu dahil) kontrol edin ve FormSubmit aktivasyonunu onaylayın.');
-      }
+      alert('Bir hata oluştu: ' + (result.message || 'Lütfen daha sonra tekrar deneyin.'))
     }
   } catch (error) {
-    alert('Gönderim hatası. İnternet bağlantınızı veya tarayıcı eklentilerinizi (AdBlock vb.) kontrol edin.');
-    console.error('Submission Error:', error);
+    alert('Gönderim hatası. Lütfen internet bağlantınızı kontrol edin.')
+    console.error('Web3Forms Error:', error)
   } finally {
     isSubmitting.value = false
   }
