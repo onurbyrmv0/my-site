@@ -12,7 +12,7 @@ const isSubmitting = ref(false)
 const submitForm = async () => {
   isSubmitting.value = true
   
-  // BURAYA KENDİ E-POSTA ADRESİNİZİ YAZIN
+  // Kendi e-posta adresiniz
   const EMAIL_ADDRESS = "onur.bayramov2005@icloud.com" 
 
   try {
@@ -26,21 +26,30 @@ const submitForm = async () => {
         name: form.value.name,
         email: form.value.email,
         message: form.value.message,
-        _subject: `New Contact from ${form.value.name}`,
-        _template: 'table', // Mailin daha düzgün görünmesini sağlar
-        _captcha: 'false'   // Captcha doğrulamasını kapatır (daha hızlı gönderim için)
+        _subject: `Portfolio: ${form.value.name} size bir mesaj gönderdi!`,
+        _template: 'table',
+        _captcha: 'false',
+        _honey: '' // Spam koruması için gizli alan
       })
     });
 
-    if (response.ok) {
-      alert('Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım.')
+    const result = await response.json();
+
+    if (response.ok && (result.success === "true" || result.success === true)) {
+      alert('Mesajınız başarıyla gönderildi! Teşekkürler.')
       form.value = { name: '', email: '', message: '' }
     } else {
-      alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.')
+      // FormSubmit hata mesajını göster (örneğin: "Please verify your email")
+      const errorMsg = result.message || 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+      alert(`Hata: ${errorMsg}`);
+      
+      if (errorMsg.toLowerCase().includes('verify')) {
+        alert('Lütfen e-postanızı (Spam kutusu dahil) kontrol edin ve FormSubmit aktivasyonunu onaylayın.');
+      }
     }
   } catch (error) {
-    alert('Gönderim hatası. İnternet bağlantınızı kontrol edin.')
-    console.error(error)
+    alert('Gönderim hatası. İnternet bağlantınızı veya tarayıcı eklentilerinizi (AdBlock vb.) kontrol edin.');
+    console.error('Submission Error:', error);
   } finally {
     isSubmitting.value = false
   }
@@ -60,6 +69,7 @@ const submitForm = async () => {
         <input 
           type="text" 
           id="name" 
+          name="name"
           v-model="form.name"
           required
           class="w-full px-4 py-3 bg-dark-bg border border-gray-700 rounded-lg focus:ring-2 focus:ring-dark-primary focus:border-transparent outline-none text-white transition-all"
@@ -72,6 +82,7 @@ const submitForm = async () => {
         <input 
           type="email" 
           id="email" 
+          name="email"
           v-model="form.email"
           required
           class="w-full px-4 py-3 bg-dark-bg border border-gray-700 rounded-lg focus:ring-2 focus:ring-dark-primary focus:border-transparent outline-none text-white transition-all"
@@ -83,6 +94,7 @@ const submitForm = async () => {
         <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
         <textarea 
           id="message" 
+          name="message"
           v-model="form.message"
           required
           rows="5"
