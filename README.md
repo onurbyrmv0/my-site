@@ -29,3 +29,21 @@ npm run dev
 ```sh
 npm run build
 ```
+
+## Docker
+
+You can run the project using Docker:
+
+### Using Docker Compose
+
+```sh
+docker-compose up -d --build
+```
+
+### Using Dockerfile Directly
+
+```sh
+docker build -t my-personal-site .
+docker run -d -p 8080:80 my-personal-site
+```
+

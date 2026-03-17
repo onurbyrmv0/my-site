@@ -26,6 +26,24 @@ const projects = [
     link: 'https://pmo.onurbayramov.codes',
     image: '/pmo.png',
     github: 'https://github.com/onurbyrmv0/Basic-PMO-Platform'
+  },
+  {
+    id: 4,
+    title: 'Basic Chat App',
+    description: 'A real-time messaging application with a clean, modern interface.',
+    tags: ['Vue', 'Node.js', 'Socket.io'],
+    link: 'https://github.com/onurbyrmv0/basic-chat',
+    image: '/chat-app.png',
+    github: 'https://github.com/onurbyrmv0/basic-chat'
+  },
+  {
+    id: 5,
+    title: 'Restaurant App',
+    description: 'A professional restaurant management and food ordering application.',
+    tags: ['Vue', 'Firebase', 'E-commerce'],
+    link: 'https://github.com/onurbyrmv0/Restaurant-App',
+    image: '/restaurant-app.png',
+    github: 'https://github.com/onurbyrmv0/Restaurant-App'
   }
 ]
 </script>

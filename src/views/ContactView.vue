@@ -101,7 +101,7 @@ const submitForm = async () => {
     </form>
     
     <div class="mt-12 flex justify-center gap-8">
-      <a href="#" target="_blank" class="text-gray-400 hover:text-dark-secondary transition-colors">
+      <a href="https://www.linkedin.com/in/onur-bayramov-a481081a8" target="_blank" class="text-gray-400 hover:text-dark-secondary transition-colors">
         LinkedIn
       </a>
       <a href="https://github.com/onurbyrmv0" target="_blank" class="text-gray-400 hover:text-dark-secondary transition-colors">

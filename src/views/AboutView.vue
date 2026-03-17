@@ -17,14 +17,56 @@
         </div>
         <div class="bg-dark-surface p-6 rounded-xl border border-gray-800">
           <h3 class="text-2xl font-bold mb-4 text-dark-secondary">Skills</h3>
-          <ul class="list-disc list-inside text-gray-400 space-y-2">
-            <li>Vue.js, React & Angular</li>
-            <li>TypeScript & JavaScript (ES6+)</li>
-            <li>Tailwind CSS, Sass & Modern UI</li>
-            <li>Node.js, Express & Backend Technologies</li>
-            <li>Figma, Adobe XD & UI/UX Design</li>
-            <li>Git, Docker & CI/CD Pipelines</li>
-          </ul>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-gray-400">
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Full Stack Development
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Vue.js & Composition API
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Git & Version Control Systems
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Tailwind CSS & Responsive Design
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Firebase & PostgreSQL
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Figma & UI/UX Design
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Vite & Front-end Tooling
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> GitHub Workflow
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> PHP & Laravel Development
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Node.js & Backend Logic
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-dark-primary">•</span> Technical Documentation
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Object-Oriented Programming
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Python (Django/Flask)
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> UI Layout Mastery
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Software Architecture
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-dark-primary">•</span> Docker & Environment Setup
+            </div>
+          </div>
         </div>
       </div>
     </div>

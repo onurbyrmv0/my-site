@@ -33,7 +33,7 @@ import Logo from './components/Logo.vue'
   <footer class="p-8 text-center text-gray-600 text-sm border-t border-gray-800 mt-12">
     <div class="flex justify-center gap-6 mb-4">
       <a href="https://github.com/onurbyrmv0" target="_blank" class="hover:text-dark-primary transition-colors">GitHub</a>
-      <a href="#" target="_blank" class="hover:text-dark-primary transition-colors">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/onur-bayramov-a481081a8" target="_blank" class="hover:text-dark-primary transition-colors">LinkedIn</a>
       <a href="https://instagram.com/onur.byrmv" target="_blank" class="hover:text-dark-primary transition-colors">Instagram</a>
     </div>
     &copy; 2025 Onur Bayramov. Built with Vue 3 & Tailwind.
