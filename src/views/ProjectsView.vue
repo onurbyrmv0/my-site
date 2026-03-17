@@ -32,16 +32,18 @@ const projects = [
     title: 'Basic Chat App',
     description: 'A real-time messaging application with a clean, modern interface.',
     tags: ['Vue', 'Node.js', 'Socket.io'],
-    link: 'https://github.com/onurbyrmv0/basic-chat',
     image: '/chat-app.png',
-    github: 'https://github.com/onurbyrmv0/basic-chat'
+    github: 'https://github.com/onurbyrmv0/Basic-Chat-App'
   },
   {
     id: 5,
     title: 'Restaurant App',
     description: 'A professional restaurant management and food ordering application.',
     tags: ['Vue', 'Firebase', 'E-commerce'],
-    link: 'https://github.com/onurbyrmv0/Restaurant-App',
+    links: [
+      { label: 'Kassa App', url: 'https://kassa.onurbayramov.codes' },
+      { label: 'Mobile App', url: 'https://waiter.onurbayramov.codes' }
+    ],
     image: '/restaurant-app.png',
     github: 'https://github.com/onurbyrmv0/Restaurant-App'
   }
@@ -64,12 +66,19 @@ const projects = [
               {{ tag }}
             </span>
           </div>
-          <div class="flex gap-4 mt-auto">
-            <a :href="project.link" target="_blank" class="flex-1 text-center py-2 bg-dark-primary text-black rounded-lg font-medium hover:bg-white transition-colors">
-              View Live
-            </a>
-            <a :href="project.github" target="_blank" class="flex-1 text-center py-2 border border-dark-primary text-dark-primary rounded-lg font-medium hover:bg-dark-primary hover:text-black transition-colors">
-              GitHub
+          <div class="flex flex-col gap-3 mt-auto">
+            <div v-if="project.links || project.link" class="flex gap-3">
+              <template v-if="project.links">
+                <a v-for="link in project.links" :key="link.url" :href="link.url" target="_blank" class="flex-1 text-center py-2 bg-dark-primary text-black rounded-lg text-sm font-medium hover:bg-white transition-colors">
+                  {{ link.label }}
+                </a>
+              </template>
+              <a v-else-if="project.link" :href="project.link" target="_blank" class="flex-1 text-center py-2 bg-dark-primary text-black rounded-lg text-sm font-medium hover:bg-white transition-colors">
+                Live Demo
+              </a>
+            </div>
+            <a :href="project.github" target="_blank" class="w-full text-center py-2 border border-dark-primary text-dark-primary rounded-lg text-sm font-medium hover:bg-dark-primary hover:text-black transition-colors">
+              GitHub Source
             </a>
           </div>
         </div>
