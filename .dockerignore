@@ -1,0 +1,10 @@
+node_modules
+dist
+.git
+.vscode
+.gemini
+README.md
+Dockerfile
+docker-compose.yml
+nginx.conf
+aapanel_nginx.conf
